@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: user-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+      generate-ddl: true
+    properties:
+      hibernate.implicit_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+      hibernate.physical_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/user-service
+    username: root
+    password: 1234
+server:
+  port: 8000
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
